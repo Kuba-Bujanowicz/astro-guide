@@ -1,5 +1,18 @@
 ---
+const pageTitle = "About Me";
 
+const identity = {
+  firstName: "Kuba",
+  country: "Poland",
+  occupation: "Web Developer",
+  hobbies: ["coding", "gaming", "music", "movies"],
+};
+
+const skills = ["HTML", "Sass", "TypeScript", "React", "Astro", "Tailwind CSS"];
+
+const happy = true;
+const finished = false;
+const goal = 1;
 ---
 
 <html lang="en">
@@ -8,7 +21,7 @@
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
-    <title>Astro</title>
+    <title>{pageTitle}</title>
   </head>
   <body>
     <nav class="navbar bg-neutral w-full shadow-xl">
@@ -21,13 +34,47 @@
     <main class="flex p-10">
       <div class="w-1/4"></div>
       <article class="prose w-2/4">
-        <h1>About me</h1>
+        <h1>{pageTitle}</h1>
         <h2>Getting to know Astro and Tailwind CSS with daisyUI</h2>
         <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos,
           adipisci veniam? Obcaecati error, amet at fugiat ex non voluptate
           tempore!
         </p>
+        <h2>Here are some facts about me:</h2>
+        <ul>
+          <li>
+            <strong>First name:</strong>
+            {identity.firstName}
+          </li>
+          <li>
+            <strong>Country:</strong>
+            {identity.country}
+          </li>
+          <li>
+            <strong>Occupation:</strong>
+            {identity.occupation}
+          </li>
+          <li>
+            <strong>Hobbies:</strong>
+            <ul>
+              {identity.hobbies.map((hobby) => <li>{hobby}</li>)}
+            </ul>
+          </li>
+        </ul>
+        <h2>My skills are:</h2>
+        <ul>
+          {skills.map((skill) => <li>{skill}</li>)}
+        </ul>
+        {happy && <p>I am happy to be learning new technologies</p>}
+        {finished && <p>I have finished learning new technologies</p>}
+        {
+          goal === 1 ? (
+            <p>I have reached my goal</p>
+          ) : (
+            <p>I have not reached my goal</p>
+          )
+        }
       </article>
       <div class="w-1/4"></div>
     </main>
