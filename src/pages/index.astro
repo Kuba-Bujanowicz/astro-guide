@@ -1,4 +1,7 @@
 ---
+import Navigation from "../components/navigation.astro";
+import Footer from "../components/Footer.astro";
+
 const pageTitle = "Home Page";
 ---
 
@@ -11,13 +14,7 @@ const pageTitle = "Home Page";
     <title>{pageTitle}</title>
   </head>
   <body>
-    <nav class="navbar bg-neutral w-full shadow-xl">
-      <ul class="menu menu-horizontal mx-auto px-1">
-        <li><a href="/">Home</a></li>
-        <li><a href="/about">About</a></li>
-        <li><a href="/blog">Blog</a></li>
-      </ul>
-    </nav>
+    <Navigation />
     <main class="flex p-10">
       <div class="w-1/4"></div>
       <article class="prose w-2/4">
@@ -25,5 +22,6 @@ const pageTitle = "Home Page";
       </article>
       <div class="w-1/4"></div>
     </main>
+    <Footer />
   </body>
 </html>

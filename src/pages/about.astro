@@ -1,4 +1,7 @@
 ---
+import Navigation from "../components/navigation.astro";
+import Footer from "../components/Footer.astro";
+
 const pageTitle = "About Me";
 
 const identity = {
@@ -23,15 +26,10 @@ const goal = 1;
     <meta name="generator" content={Astro.generator} />
     <title>{pageTitle}</title>
   </head>
-  <body>
-    <nav class="navbar bg-neutral w-full shadow-xl">
-      <ul class="menu menu-horizontal mx-auto px-1">
-        <li><a href="/">Home</a></li>
-        <li><a href="/about">About</a></li>
-        <li><a href="/blog">Blog</a></li>
-      </ul>
-    </nav>
-    <main class="flex p-10">
+  <body class="flex flex-col min-h-screen">
+    <Navigation />
+
+    <main class="flex flex-1 p-10">
       <div class="w-1/4"></div>
       <article class="prose w-2/4">
         <h1>{pageTitle}</h1>
@@ -78,5 +76,6 @@ const goal = 1;
       </article>
       <div class="w-1/4"></div>
     </main>
+    <Footer />
   </body>
 </html>
