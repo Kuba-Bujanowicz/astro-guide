@@ -1,4 +1,5 @@
 ---
+layout: "../../layouts/BaseLayout.astro"
 title: "My First Blog Post"
 date: 2023-11-30
 description: "This is first blog rendered by Astro"
