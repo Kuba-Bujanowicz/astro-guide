@@ -10,16 +10,20 @@
     <meta name="generator" content={Astro.generator} />
     <title>Astro</title>
   </head>
-  <body class="container mx-auto">
-    <nav class="navbar bg-base-100">
-      <ul class="menu menu-horizontal px-1">
+  <body>
+    <nav class="navbar bg-neutral w-full shadow-xl">
+      <ul class="menu menu-horizontal mx-auto px-1">
         <li><a href="/">Home</a></li>
         <li><a href="/about">About</a></li>
         <li><a href="/blog">Blog</a></li>
       </ul>
     </nav>
-    <article class="prose">
-      <h1>My Astro Site</h1>
-    </article>
+    <main class="flex p-10">
+      <div class="w-1/4"></div>
+      <article class="prose w-2/4">
+        <h1>My Astro Site</h1>
+      </article>
+      <div class="w-1/4"></div>
+    </main>
   </body>
 </html>
