@@ -13,9 +13,9 @@ const pageTitle = "Home Page";
     <meta name="generator" content={Astro.generator} />
     <title>{pageTitle}</title>
   </head>
-  <body>
+  <body class="flex flex-col min-h-screen">
     <Navigation />
-    <main class="flex p-10">
+    <main class="flex flex-1 p-10">
       <div class="w-1/4"></div>
       <article class="prose w-2/4">
         <h1>{pageTitle}</h1>
