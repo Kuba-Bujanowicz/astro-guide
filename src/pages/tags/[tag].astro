@@ -1,0 +1,43 @@
+---
+import type { GetStaticPaths } from "astro";
+import BlogLinkItem from "../../components/BlogLinkItem.astro";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+type Props = {
+  posts: {
+    url: string;
+    frontmatter: {
+      title: string;
+      tags: string[];
+    };
+  }[];
+};
+
+export const getStaticPaths = (async () => {
+  const allPosts = (await Astro.glob("../posts/*.md")) as Props["posts"];
+  const uniqueTags = [
+    ...new Set(allPosts.flatMap((post) => post.frontmatter.tags)),
+  ];
+
+  return uniqueTags.map((tag) => ({
+    params: { tag },
+    props: {
+      posts: allPosts.filter((post) => post.frontmatter.tags.includes(tag)),
+    },
+  }));
+}) satisfies GetStaticPaths;
+
+const { tag } = Astro.params;
+const { posts } = Astro.props as Props;
+---
+
+<BaseLayout pageTitle={tag}>
+  <p>Post tagged with {tag}</p>
+  <ul>
+    {
+      posts.map((post) => (
+        <BlogLinkItem url={post.url} title={post.frontmatter.title} />
+      ))
+    }
+  </ul>
+</BaseLayout>
