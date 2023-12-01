@@ -11,13 +11,24 @@ type Props = {
       url: string;
       alt: string;
     };
+    tags: string[];
   };
 };
 
-const { title, date, description, author, image } = Astro.props.frontmatter;
+const { title, date, description, author, image, tags } =
+  Astro.props.frontmatter;
 ---
 
 <BaseLayout pageTitle={title}>
+  {
+    tags.map((tag) => (
+      <div class="badge badge-neutral flex-inline mr-2">
+        <a class="text-base" href={`/tags/${tag}`}>
+          {tag}
+        </a>
+      </div>
+    ))
+  }
   <p>{date.slice(0, 10)}</p>
   <p><em>{description}</em></p>
   <p>Written by: {author}</p>
