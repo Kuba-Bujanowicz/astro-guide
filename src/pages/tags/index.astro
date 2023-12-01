@@ -1,0 +1,30 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+type Post = {
+  frontmatter: {
+    title: string;
+    description: string;
+    date: string;
+    tags: string[];
+  };
+};
+
+const pageTitle = "Tags";
+const allPosts = (await Astro.glob("../posts/*.md")) as Post[];
+const uniqueTags = [
+  ...new Set(allPosts.flatMap((post) => post.frontmatter.tags)),
+];
+---
+
+<BaseLayout pageTitle={pageTitle}>
+  {
+    uniqueTags.map((tag) => (
+      <div class="badge badge-neutral flex-inline mr-2">
+        <a class="text-base" href={`/tags/${tag}`}>
+          {tag}
+        </a>
+      </div>
+    ))
+  }
+</BaseLayout>
