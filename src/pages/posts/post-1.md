@@ -1,6 +1,6 @@
 ---
 layout: "../../layouts/BaseLayout.astro"
-title: "My First Blog Post"
+pageTitle: "My First Blog Post"
 date: 2023-11-30
 description: "This is first blog rendered by Astro"
 author: "Me"
@@ -9,8 +9,6 @@ image:
   alt: "The full Astro logo"
 tags: ["astro", "blogging", "learning", "tailwindcss"]
 ---
-
-# My First Blog Post
 
 Published on: 2023-11-30
 

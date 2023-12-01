@@ -1,6 +1,6 @@
 ---
 layout: "../../layouts/BaseLayout.astro"
-title: "My Third Blog Post"
+pageTitle: "My Third Blog Post"
 author: "Me"
 description: "I had some challenges, but asking in the community really helped!"
 image:
