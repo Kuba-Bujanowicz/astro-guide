@@ -1,8 +1,37 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Greeting from "../components/Greeting";
 const pageTitle = "Home Page";
+const messages = [
+  "Hi",
+  "Hey",
+  "Hello",
+  "Hola",
+  "Bonjour",
+  "Ciao",
+  "Hallo",
+  "Hej",
+  "Hei",
+  "Salam",
+  "Shalom",
+  "Sawubona",
+  "Namaste",
+  "Konnichiwa",
+  "Merhaba",
+  "Szia",
+  "Salamu",
+  "Sannu",
+  "Saluton",
+  "Ahoj",
+  "Zdravo",
+  "Marhaba",
+  "Sveiki",
+  "Sveikas",
+  "Szi",
+];
 ---
 
 <BaseLayout pageTitle={pageTitle}>
   <p>This is Home Page</p>
+  <Greeting messages={messages} client:load />
 </BaseLayout>
