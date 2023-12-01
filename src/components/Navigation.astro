@@ -1,5 +1,9 @@
-<nav class="navbar bg-neutral w-full px-5 shadow-xl">
-  <div class="dropdown">
+---
+import ThemeController from "./ThemeController";
+---
+
+<nav class="navbar w-full px-5 shadow-xl">
+  <div class="dropdown flex-1">
     <div tabindex="0" role="button" class="btn btn-ghost sm:hidden">
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -29,4 +33,5 @@
     <li><a href="/blog">Blog</a></li>
     <li><a href="/tags">Tags</a></li>
   </ul>
+  <ThemeController />
 </nav>
